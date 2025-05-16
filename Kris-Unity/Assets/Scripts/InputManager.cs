@@ -30,7 +30,7 @@ public class InputManager : AModule
         if (m_Timer >= m_SnapInterval && MoveInput != Vector2.zero)
         {
             m_Timer = 0f;
-            Debug.Log(MoveInput.ToString());
+//            Debug.Log(MoveInput.ToString());
             m_PlayerOrigin.UpdatePosition(MoveInput);
             
         }

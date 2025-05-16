@@ -9,11 +9,13 @@ public class PlayerOrigin : MonoBehaviour
 
     public void UpdatePosition(Vector2 delta)
     {
-        CurrentPosition += delta;
-        int index = (int)(CurrentPosition.x * 5 + CurrentPosition.y);
+        Vector2 buffer = CurrentPosition + delta;
+        int index = (int)(buffer.x * 5 + buffer.y);
         List<GridCell> currentGrid = GameManager.Instance.LevelManager.Builder.Grid;
-        if (index < currentGrid.Count && index > 0)
+        Debug.Log(index);
+        if (index < currentGrid.Count && index >= 0  && buffer.x < 5 && buffer.x >= 0 && buffer.y < 5 && buffer.y >= 0)
         {
+            CurrentPosition += delta;
             transform.position = currentGrid[index].transform.position;    
         }
     }   
