@@ -154,9 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d13e974b2933fb4a8f19fb5a2ba0c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LevelManager: {fileID: 0}
+  m_LevelManager: {fileID: 83920767}
   m_InputManager: {fileID: 83920765}
-  m_LevelBuilder: {fileID: 0}
 --- !u!114 &83920765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,8 +201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53143edfbc1547e4898e84d0aff14a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Builder: {fileID: 0}
-  m_DefaultLevelData: {fileID: 0}
+  m_Builder: {fileID: 435343388}
+  m_DefaultLevelData: {fileID: 11400000, guid: 6f020288a0c8d47d3b1819eec77976fe, type: 2}
 --- !u!1 &435343386
 GameObject:
   m_ObjectHideFlags: 0

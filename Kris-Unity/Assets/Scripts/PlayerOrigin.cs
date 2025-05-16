@@ -11,6 +11,10 @@ public class PlayerOrigin : MonoBehaviour
     {
         CurrentPosition += delta;
         int index = (int)(CurrentPosition.x * 5 + CurrentPosition.y);
-        transform.position = GameManager.Instance.LevelBuilder.Grid[index].transform.position;
+        List<GridCell> currentGrid = GameManager.Instance.LevelManager.Builder.Grid;
+        if (index < currentGrid.Count && index > 0)
+        {
+            transform.position = currentGrid[index].transform.position;    
+        }
     }   
 }
