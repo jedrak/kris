@@ -18,5 +18,19 @@ public class PlayerOrigin : MonoBehaviour
             CurrentPosition += delta;
             transform.position = currentGrid[index].transform.position;    
         }
-    }   
+    }
+
+    public void UpdatePosition(GridCell cell)
+    {
+        if (cell != null && GameManager.Instance.LevelManager.Builder.Grid != null &&
+            GameManager.Instance.LevelManager.Builder.Grid.Contains(cell))
+        {
+            Vector2 size = GameManager.Instance.LevelManager.CurrentLevelData.Size;
+            int index = GameManager.Instance.LevelManager.Builder.Grid.IndexOf(cell);
+            CurrentPosition = new Vector2(index / size.x, index % size.y);
+            transform.position = cell.transform.position;
+        }
+    }
+    
+    
 }

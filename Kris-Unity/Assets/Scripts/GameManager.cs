@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private InputManager m_InputManager;
     public InputManager InputMgr => m_InputManager;
 
+    [SerializeField] private PlayerOrigin m_PlayerOrigin;
+    public PlayerOrigin PlayerOrigin => m_PlayerOrigin;
     private void Awake()
     {
         if (Instance == null)
@@ -31,5 +33,14 @@ public class GameManager : MonoBehaviour
         m_InputManager.HandleInit();
         m_LevelManager.HandleInit();
         
+    }
+
+    public void SubscribePlayer(PlayerOrigin playerOrigin)
+    {
+        if (m_PlayerOrigin != null)
+        {
+            Destroy(m_PlayerOrigin);
+        }
+        m_PlayerOrigin = playerOrigin;
     }
 }

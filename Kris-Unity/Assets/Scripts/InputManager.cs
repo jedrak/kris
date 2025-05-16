@@ -6,7 +6,6 @@ using UnityEngine.PlayerLoop;
 public class InputManager : AModule
 {
     public Vector2 MoveInput { get; private set; }
-    [SerializeField] private PlayerOrigin m_PlayerOrigin;
     [SerializeField] private InputActionAsset m_PlayerControlls;
     [SerializeField] private string m_PlayerActionMapName = "Player";
     [SerializeField] private string m_PlayerMoveActionName = "Move";
@@ -31,7 +30,7 @@ public class InputManager : AModule
         {
             m_Timer = 0f;
 //            Debug.Log(MoveInput.ToString());
-            m_PlayerOrigin.UpdatePosition(MoveInput);
+            GameManager.Instance.PlayerOrigin.UpdatePosition(MoveInput);
             
         }
     }
@@ -51,7 +50,5 @@ public class InputManager : AModule
         m_MoveAction.performed += context => MoveInput = context.ReadValue<Vector2>();
         m_MoveAction.canceled += context => MoveInput = Vector2.zero;
     }
-
-
 }
 
