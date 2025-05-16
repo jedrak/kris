@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -132,9 +132,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 83920766}
-  - component: {fileID: 83920765}
   - component: {fileID: 83920764}
-  - component: {fileID: 83920763}
+  - component: {fileID: 83920765}
+  - component: {fileID: 83920767}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -142,20 +142,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &83920763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83920762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5630b351b9eef9044bf1071d7cd67e96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GridCellPrefab: {fileID: 1781567521582117836, guid: 437b259ed39b838439a66e25ab677482, type: 3}
-  m_Mul: 1.15
 --- !u!114 &83920764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,8 +154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d13e974b2933fb4a8f19fb5a2ba0c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_LevelManager: {fileID: 0}
   m_InputManager: {fileID: 83920765}
-  m_LevelBuilder: {fileID: 83920763}
+  m_LevelBuilder: {fileID: 0}
 --- !u!114 &83920765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,10 +185,71 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 435343387}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &83920767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83920762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53143edfbc1547e4898e84d0aff14a83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Builder: {fileID: 0}
+  m_DefaultLevelData: {fileID: 0}
+--- !u!1 &435343386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 435343387}
+  - component: {fileID: 435343388}
+  m_Layer: 0
+  m_Name: Level
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &435343387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435343386}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 83920766}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &435343388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435343386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5630b351b9eef9044bf1071d7cd67e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GridCellPrefab: {fileID: 1781567521582117836, guid: 437b259ed39b838439a66e25ab677482, type: 3}
+  m_Mul: 1.15
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,7 +471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8278227096684021184, guid: 6a9374d5bdfd2e540be47645fc3a5edc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8278227096684021184, guid: 6a9374d5bdfd2e540be47645fc3a5edc, type: 3}
       propertyPath: m_LocalPosition.z

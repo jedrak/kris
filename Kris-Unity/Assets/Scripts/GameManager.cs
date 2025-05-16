@@ -6,13 +6,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    
+
+    [SerializeField] private LevelManager m_LevelManager;
+    public LevelManager LevelManager => m_LevelManager;
     
     [SerializeField] private InputManager m_InputManager;
     public InputManager InputMgr => m_InputManager;
-
-    [SerializeField] private LevelBuilder m_LevelBuilder;
-    public LevelBuilder LevelBuilder => m_LevelBuilder;
 
     private void Awake()
     {
@@ -24,5 +23,13 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        HandleInit();
+    }
+
+    private void HandleInit()
+    {
+        m_InputManager.HandleInit();
+        m_LevelManager.HandleInit();
+        
     }
 }

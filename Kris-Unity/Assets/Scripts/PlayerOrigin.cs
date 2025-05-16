@@ -12,10 +12,5 @@ public class PlayerOrigin : MonoBehaviour
         CurrentPosition += delta;
         int index = (int)(CurrentPosition.x * 5 + CurrentPosition.y);
         transform.position = GameManager.Instance.LevelBuilder.Grid[index].transform.position;
-    }
-
-    // private void Update()
-    // {
-    //     transform.position = CurrentPosition;
-    // }
+    }   
 }

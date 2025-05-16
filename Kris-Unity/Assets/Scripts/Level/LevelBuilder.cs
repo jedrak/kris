@@ -17,15 +17,11 @@ public class LevelBuilder : MonoBehaviour
             for (int j = 0; j < 5; j++)
             {
                 GridCell cell = Instantiate(GridCellPrefab, Vector3.zero, Quaternion.identity);
-                cell.transform.SetParent(transform);
+                cell.transform.SetParent(GameManager.Instance.LevelManager.transform);
                 cell.transform.position = new Vector3(i*m_Mul, 0, j*m_Mul);
                 m_Grid.Add(cell);
             }
         }
     }
-
-    private void Awake()
-    {
-        BuildLevel(null);
-    }
+    
 }

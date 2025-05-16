@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.PlayerLoop;
 
-public class InputManager : MonoBehaviour
+public class InputManager : AModule
 {
     public Vector2 MoveInput { get; private set; }
     [SerializeField] private PlayerOrigin m_PlayerOrigin;
@@ -17,8 +17,9 @@ public class InputManager : MonoBehaviour
     private float m_Timer;
     [SerializeField] private float m_SnapInterval = 1f;
 
-    private void Awake()
+    public override void HandleInit()
     {
+        base.HandleInit();
         m_MoveAction = m_PlayerControlls.FindActionMap(m_PlayerActionMapName).FindAction(m_PlayerMoveActionName);
         RegisterInputActions();
     }
@@ -53,3 +54,4 @@ public class InputManager : MonoBehaviour
 
 
 }
+

@@ -1,18 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class LevelData : MonoBehaviour
+[CreateAssetMenu(fileName = "LevelData", menuName = "Kris/LevelData")]
+public class LevelData : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Vector2 Size;
 }
